@@ -12,7 +12,7 @@ interface JwtPayload {
 export const authenticateToken = (req: Request, res: Response, next: NextFunction) => {
   // TODO: verify the token exists and add the user data to the request object
   //  When a client sends a login request, it must send bearer toke in authorization
-  //  header
+  //  header (token is generated in auth-routes)
   // Authorization: Bearer <token>
   // Retrieve 'Authorization' value of header, remove the string 'Bearer'
   // 
