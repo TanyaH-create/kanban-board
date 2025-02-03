@@ -24,6 +24,7 @@ const Board = () => {
 
   const fetchTickets = async () => {
     try {
+      console.log('fetch the Tickets')
       const data = await retrieveTickets();
       setTickets(data);
     } catch (err) {

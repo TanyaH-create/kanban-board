@@ -21,7 +21,14 @@ const Login = () => {
     e.preventDefault();
     try {
       const data = await login(loginData);
-      Auth.login(data.token);
+      //add coded to check for null
+      if (data && data.token) {
+        Auth.login(data.token);
+      } else {
+        console.error('Login Failed: No token returned')
+        alert('Login failed, please try again')
+      }
+
     } catch (err) {
       console.error('Failed to login', err);
     }

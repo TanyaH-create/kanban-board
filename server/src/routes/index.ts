@@ -15,6 +15,5 @@ router.use('/auth', authRoutes);
 //apiRoutes will go through
 router.use('/api', authenticateToken, apiRoutes)
 
-router.use('/api', apiRoutes);
 
 export default router;
