@@ -8,11 +8,12 @@ const Navbar = () => {
   const checkLogin = () => {
     if(auth.loggedIn()) {
       setLoginCheck(true);
+      console.log('Login has been checked')
     }
   };
 
   useEffect(() => {
-    console.log(loginCheck);
+    console.log('Login check:', loginCheck);
     checkLogin();
   }, [loginCheck])
 

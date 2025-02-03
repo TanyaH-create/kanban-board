@@ -13,7 +13,9 @@ const retrieveTickets = async () => {
         }
       }
     );
+    console.log('retrieving tickets')
     const data = await response.json();
+    console.log(`retireved ticked data`, data)
 
     if(!response.ok) {
       throw new Error('invalid API response, check network tab!');
