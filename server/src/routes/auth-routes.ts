@@ -23,7 +23,7 @@ export const login = async (req: Request, res: Response) => {
       .json({ message: "Authentication failed - password" });
   }
   //if user is valdated send a token (secret key cannot be null or undefined)
-  const secretKey = process.env.JWT_SECRET_KEY_KEY!;
+  const secretKey = process.env.JWT_SECRET_KEY!;
   //create token with the username and sign it with secret key. Set a 1 hour exp time
   const token = jwt.sign({ username }, secretKey, { expiresIn: "1h" });
   //send the token to the client in  the response

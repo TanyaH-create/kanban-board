@@ -32,9 +32,9 @@ export const authenticateToken = (
       .json({ message: "Access denied. No token provided." });
   }
   try {
-    console.log("JWT_SECRET_KEY:", process.env.JWT_SECRET_KEY_KEY);
+    console.log("JWT_SECRET_KEY:", process.env.JWT_SECRET_KEY);
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY_KEY as string);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY as string);
     console.log(`decoded: ${decoded}`);
     req.user = decoded as JwtPayload; //attach user info to the request
     console.log(`req.user = ${req.user}`);
